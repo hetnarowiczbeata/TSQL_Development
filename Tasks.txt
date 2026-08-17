@@ -1,0 +1,163 @@
+# Product Sales Analysis - AdventureWorks
+
+*tasks prepared by AI*
+
+## 1. Data Verification
+
+* [ ] **1.1** Check the number of records in each table.
+* [ ] **1.2** Check the primary keys in all three tables.
+* [ ] **1.3** Check the foreign key relationships between the tables.
+* [ ] **1.4** Check the minimum and maximum order dates.
+* [ ] **1.5** Check the number of unique products appearing in sales.
+* [ ] **1.6** Verify whether all `ProductID` values from `SalesOrderDetail` exist in `Production.Product`.
+
+## 2.JOIN
+
+* [ ] **2.1** Create a query that combines `Sales.SalesOrderHeader`, `Sales.SalesOrderDetail`, and `Production.Product` 
+to display `SalesOrderID`, order date, `ProductID`, product name, order quantity, unit price, and line total.
+
+
+## 3. Sales Aggregations
+
+* [ ] **3.1** Calculate the total quantity sold for each product.
+* [ ] **3.2** Calculate the total sales revenue for each product.
+* [ ] **3.3** Calculate the number of orders for each product.
+* [ ] **3.4** Display the TOP 10 products by quantity sold.
+* [ ] **3.5** Display the TOP 10 products by sales revenue.
+* [ ] **3.6** Calculate the average selling price for each product.
+* [ ] **3.7** Calculate the average quantity sold per order line.
+
+## 4. Order Analysis
+
+* [ ] **4.1** Calculate the number of different products in each sales order.
+* [ ] **4.2** Calculate the total quantity of items in each sales order.
+* [ ] **4.3** Calculate the total value of each sales order.
+* [ ] **4.4** Find the sales order with the highest total value.
+* [ ] **4.5** Display sales orders with a total value greater than 5000.
+* [ ] **4.6** Calculate the average sales order value.
+
+## 5. Time Analysis
+
+* [ ] **5.1** Calculate total sales revenue by day.
+* [ ] **5.2** Calculate total sales revenue by month.
+* [ ] **5.3** Calculate total quantity sold by month.
+* [ ] **5.4** Calculate the number of sales orders by month.
+* [ ] **5.5** Find the month with the highest sales revenue.
+* [ ] **5.6** Aggregate product sales by month
+* [ ] **5.7** Calculate month-over-month sales change for each product.
+* [ ] **5.8** Calculate the month-over-month percentage sales change for each product.
+
+## 6. Views
+
+* [ ] **6.1** Create a view called `vw_SalesOrderProductDetails` joining all three tables.
+* [ ] **6.2** Include product, order, quantity, price, and revenue information in the view.
+* [ ] **6.3** Create a view containing aggregated sales results by product.
+* [ ] **6.4** Create a monthly sales summary view.
+* [ ] **6.5** Use the created views in reporting queries.
+* [ ] **6.6** Create at least one stored procedure based on a view instead of directly querying the source tables.
+
+## 7. Temporary Tables
+
+* [ ] **7.1** Create and populate a temporary table using SELECT INTO
+* [ ] **7.2** Create a temporary table explicitly and populate it using INSERT INTO
+* [ ] **7.3** Query the temporary table to find the best-performing month.
+* [ ] **7.4** Create a temporary table containing the TOP 10 products by sales revenue.
+* [ ] **7.5** Compare TOP 10 products by revenue with TOP 10 products by quantity sold.
+* [ ] **7.6** Create a stored procedure that stores monthly sales data in a temporary table and returns the month with the highest revenue
+
+## 8. Common Table Expressions
+
+* [ ] **8.1** Create a CTE containing total sales by product.
+* [ ] **8.2** Use a CTE to find the TOP 10 products by revenue.
+* [ ] **8.3** Use multiple CTEs in one query.
+* [ ] **8.4** Use a CTE to compare monthly sales.
+* [ ] **8.5** Use a CTE together with a window function.
+* [ ] **8.6** Use a CTE inside a stored procedure.
+
+## 9. Subqueries, EXISTS and NOT EXISTS
+
+* [ ] **9.1** Use a subquery to find products with sales revenue above the average product revenue.
+* [ ] **9.2** Use a correlated subquery to calculate total revenue for each product.
+* [ ] **9.3** Find orders whose total value is greater than the average order value.
+* [ ] **9.4** Use `EXISTS` to find products that have appeared in at least one sales order.
+* [ ] **9.5** Use `NOT EXISTS` to find products that have never been sold.
+* [ ] **9.6** Use `NOT EXISTS` to find sales orders that do not contain a selected product.
+* [ ] **9.7** Use `NOT EXISTS` to identify products that were sold in one month but not in the following month.
+* [ ] **9.8** Use `EXISTS` to find products sold in more than one selected time period.
+* [ ] **9.9** Rewrite a query using `LEFT JOIN ... IS NULL` as a `NOT EXISTS` query and compare the results.
+* [ ] **9.10** Compare `NOT EXISTS`, `NOT IN`, and `LEFT JOIN ... IS NULL`.
+
+## 10. CROSS APPLY and OUTER APPLY
+
+* [ ] **10.1** Use `OUTER APPLY` to return the most recent sales order for each product.
+* [ ] **10.2** Use `OUTER APPLY` with `TOP 1` and `ORDER BY` to find the last date on which each product was sold.
+* [ ] **10.3** Use `OUTER APPLY` to return the highest-value order line for each product.
+* [ ] **10.4** Use `OUTER APPLY` to calculate total quantity and total revenue for each product.
+* [ ] **10.5** Use `CROSS APPLY` to return only products that have matching sales data.
+* [ ] **10.6** Compare the behavior of `CROSS APPLY` and `OUTER APPLY` for products that have never been sold.
+* [ ] **10.7** Rewrite a correlated subquery using `OUTER APPLY`.
+* [ ] **10.8** Use `OUTER APPLY` together with an aggregated subquery.
+* [ ] **10.9** Use `OUTER APPLY` to return the TOP-selling order for every product.
+* [ ] **10.10** Compare solutions using `JOIN`, correlated subquery, and `APPLY`.
+
+## 11. Stored Procedures
+
+* [ ] **11.1** Create `dbo.usp_GetProductSales` with a `@ProductID` parameter.
+* [ ] **11.2** Create `dbo.usp_GetSalesByDate` with `@DateFrom` and `@DateTo` parameters.
+* [ ] **11.3** Create `dbo.usp_ProductSalesSummary` with a `@ProductID` parameter.
+* [ ] **11.4** Create `dbo.usp_TopSellingProducts` with a `@TopN` parameter.
+* [ ] **11.5** Create `dbo.usp_OrdersAboveValue` with a `@MinimumValue` parameter.
+* [ ] **11.6** Create a procedure returning monthly sales results.
+* [ ] **11.7** Create a procedure using a temporary table.
+* [ ] **11.8** Create a procedure using a CTE.
+* [ ] **11.9** Create a procedure with an optional parameter.
+* [ ] **11.10** Add parameter validation to at least one procedure.
+* [ ] **11.11** Add `TRY...CATCH` error handling to at least one procedure.
+
+## 12. Window Functions
+
+* [ ] **12.1** Rank products by total sales revenue using `RANK()`.
+* [ ] **12.2** Rank products by quantity sold using `DENSE_RANK()`.
+* [ ] **12.3** Assign row numbers to products using `ROW_NUMBER()`.
+* [ ] **12.4** Calculate running total sales by month.
+* [ ] **12.5** Calculate each product's percentage share of total revenue.
+* [ ] **12.6** Compare current month sales with previous month sales using `LAG()`.
+* [ ] **12.7** Compare current month sales with next month sales using `LEAD()`.
+* [ ] **12.8** Calculate the difference between current and previous month revenue.
+* [ ] **12.9** Create a monthly product ranking using `PARTITION BY`.
+
+## 13. Advanced Analysis
+
+* [ ] **13.1** Find products that have never been sold.
+* [ ] **13.2** Find the product appearing in the highest number of different orders.
+* [ ] **13.3** Find the highest-revenue product.
+* [ ] **13.4** Find the best-selling product for each month.
+* [ ] **13.5** Find products with sales above the average product sales.
+* [ ] **13.6** Find products responsible for the highest percentage of total revenue.
+* [ ] **13.7** Create a monthly product ranking.
+* [ ] **13.8** Identify products with decreasing sales between consecutive months.
+* [ ] **13.9** Find products whose revenue increased for at least two consecutive months.
+* [ ] **13.10** Find products sold in every month appearing in the dataset.
+* [ ] **13.11** Find products sold only once.
+* [ ] **13.12** Find products with no sales during the latest month in the dataset.
+
+## 14. Final Reporting Views
+
+* [ ] **14.1** Create one final reporting view combining the most important sales information.
+* [ ] **14.2** Create a product sales reporting view containing product name, total quantity, total revenue, number of orders, and average selling price.
+* [ ] **14.3** Create a monthly sales reporting view.
+* [ ] **14.4** Create an order summary view.
+* [ ] **14.5** Use reporting views instead of source tables in final report queries.
+
+## 15. Final Reports
+
+* [ ] **15.1** Create a TOP Products report.
+* [ ] **15.2** Create a Monthly Sales report.
+* [ ] **15.3** Create a Product Sales Summary report.
+* [ ] **15.4** Create an Orders Above Value report.
+* [ ] **15.5** Create a report showing products that have never been sold.
+* [ ] **15.6** Create a report comparing current month sales with previous month sales.
+* [ ] **15.7** Create a product ranking report.
+* [ ] **15.8** Create a monthly product ranking report.
+
+
