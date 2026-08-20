@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\CTE",
     "\\Procedure",
     "\\Temporary Tables",
     "\\Views"
   ],
-  "SelectedNode": "\\Procedure\\procedures.sql",
+  "SelectedNode": "\\CTE\\CTE.sql",
   "PreviewInSolutionExplorer": false
 }

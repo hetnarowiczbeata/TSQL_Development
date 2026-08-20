@@ -67,12 +67,12 @@ to display `SalesOrderID`, order date, `ProductID`, product name, order quantity
 
 ## 8. Common Table Expressions
 
-* [ ] **8.1** Create a CTE containing total sales by product.
-* [ ] **8.2** Use a CTE to find the TOP 10 products by revenue.
-* [ ] **8.3** Use multiple CTEs in one query.
-* [ ] **8.4** Use a CTE to compare monthly sales.
-* [ ] **8.5** Use a CTE together with a window function.
-* [ ] **8.6** Use a CTE inside a stored procedure.
+* [ ] **8.1** Create a CTE that aggregates total revenue and quantity sold for each product, then query the CTE to return products with total revenue greater than 1000.
+* [ ] **8.2** Create a CTE with total revenue by product and use its result to find products with revenue above the average product revenue.
+* [ ] **8.3** Use two CTEs in one query: the first to calculate monthly sales and the second to calculate the average monthly sales. Return months with revenue above the monthly average.
+* [ ] **8.4** Create a CTE with monthly sales for each product and use `LAG()` to compare each product's revenue with its previous sales month.
+* [ ] **8.5** Create a CTE with product sales and use `RANK()` or `DENSE_RANK()` to rank products by revenue within each year.
+* [ ] **8.6** Create a stored procedure that uses a CTE to calculate product sales and returns only products with revenue above a parameter provided to the procedure.
 
 ## 9. Subqueries, EXISTS and NOT EXISTS
 
