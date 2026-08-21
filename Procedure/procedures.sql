@@ -1,4 +1,4 @@
---6.6** Create at least one stored procedure based on a view instead of directly querying the source tables
+--6.6
 
 
 CREATE PROCEDURE usp_GetMonthlySalesByYear
@@ -14,7 +14,7 @@ END
 EXEC usp_GetMonthlySalesByYear @Year = 2022
 
 
---7.6** Create a stored procedure that stores monthly sales data in a temporary table and returns the month with the highest revenue
+--7.6
 
 CREATE OR ALTER PROCEDURE usp_MonthlysalesTemptable
 AS
@@ -46,3 +46,26 @@ BEGIN
 END
 
 EXEC dbo.usp_MonthlySalesTempTable
+
+--8.6** Create a stored procedure that uses a CTE to calculate product sales and returns only products with revenue above a parameter provided to the procedure.
+
+
+CREATE OR ALTER PROCEDURE usp_productsales
+	@REVENUE INT
+
+AS
+BEGIN
+
+	WITH Productsales AS(
+		SELECT
+		ProductID,
+		SUM(LineTotal) revenue
+		FROM Sales.SalesOrderDetail
+		GROUP BY ProductID)
+	    SELECT *
+		FROM Productsales
+		WHERE revenue>@REVENUE
+END 
+
+
+EXEC usp_productsales @REVENUE=7202

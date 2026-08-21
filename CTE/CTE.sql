@@ -52,6 +52,40 @@ WHERE revenue>srednia
 
 
 
-* [ ] **8.4** Create a CTE with monthly sales for each product and use `LAG()` to compare each product's revenue with its previous sales month.
-* [ ] **8.5** Create a CTE with product sales and use `RANK()` or `DENSE_RANK()` to rank products by revenue within each year.
-* [ ] **8.6** Create a stored procedure that uses a CTE to calculate product sales and returns only products with revenue above a parameter provided to the procedure.
+--8.4
+
+WITH Monthlysales AS(
+SELECT 
+MONTH(soh.OrderDate) mies,
+YEAR(soh.OrderDate) rok,
+sod.ProductID,
+SUM(sod.LineTotal) revenue
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+GROUP BY 
+MONTH(soh.OrderDate),
+YEAR(soh.OrderDate), sod.ProductID)
+
+SELECT
+mies,rok,ProductID,revenue,LAG(revenue) OVER(PARTITION BY ProductID ORDER BY rok,mies) as pvs
+FROM Monthlysales
+
+--8.5
+
+--In my opinion, DENSE_RANK() is a better choice because it shows the relative position of products in a continuous ranking, without gaps in the numbering.
+
+
+WITH Productsales AS(
+SELECT 
+YEAR(soh.OrderDate) rok,
+sod.ProductID,
+SUM(sod.LineTotal) revenue
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+GROUP BY
+YEAR(soh.OrderDate), sod.ProductID)
+
+SELECT *,DENSE_RANK() OVER( PARTITION BY rok ORDER BY revenue DESC) as prodran
+FROM Productsales
+
+--8.6 is in procedures
