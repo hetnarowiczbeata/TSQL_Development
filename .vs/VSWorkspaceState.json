@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CTE",
-    "\\Procedure",
-    "\\Temporary Tables",
-    "\\Views"
+    "\\Subqueries, EXISTS and NOT EXISTS"
   ],
+  "SelectedNode": "\\Subqueries, EXISTS and NOT EXISTS\\Subqueries, EXISTS and NOT EXISTS.sql",
   "PreviewInSolutionExplorer": false
 }
