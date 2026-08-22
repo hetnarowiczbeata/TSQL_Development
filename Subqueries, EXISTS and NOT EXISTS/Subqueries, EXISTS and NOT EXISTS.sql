@@ -89,9 +89,20 @@ WHERE NOT EXISTS( SELECT 1 FROM ProductMonths nextm
 WHERE nextm.ProductID=pm.ProductID
 AND DATEFROMPARTS(nextm.ROK,nextm.MIESIAC,1)=DATEADD(MONTH,1,DATEFROMPARTS(pm.ROK,pm.MIESIAC,1)))
 
-
-
-
 --9.8** Use `EXISTS` to find products sold in more than one selected time period.
---9.9** Rewrite a query using `LEFT JOIN ... IS NULL` as a `NOT EXISTS` query and compare the results.
---9.10** Compare `NOT EXISTS`, `NOT IN`, and `LEFT JOIN ... IS NULL`.
+SELECT p.ProductID
+FROM Production.Product p
+WHERE EXISTS (
+SELECT 1 
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+WHERE  p.ProductID=sod.ProductID
+AND  YEAR(soh.OrderDate)=2023
+AND MONTH(soh.OrderDate)=1)
+AND EXISTS(
+SELECT 1 
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+WHERE  p.ProductID=sod.ProductID
+AND  YEAR(soh.OrderDate)=2023
+AND MONTH(soh.OrderDate)=2)

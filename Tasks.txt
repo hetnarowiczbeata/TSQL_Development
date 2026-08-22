@@ -84,8 +84,6 @@ to display `SalesOrderID`, order date, `ProductID`, product name, order quantity
 * [ ] **9.6** Use `NOT EXISTS` to find sales orders that do not contain a selected product.
 * [ ] **9.7** Use `NOT EXISTS` to identify products that were sold in one month but not in the following month.
 * [ ] **9.8** Use `EXISTS` to find products sold in more than one selected time period.
-* [ ] **9.9** Rewrite a query using `LEFT JOIN ... IS NULL` as a `NOT EXISTS` query and compare the results.
-* [ ] **9.10** Compare `NOT EXISTS`, `NOT IN`, and `LEFT JOIN ... IS NULL`.
 
 ## 10. CROSS APPLY and OUTER APPLY
 
