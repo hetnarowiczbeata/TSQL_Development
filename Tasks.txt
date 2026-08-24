@@ -93,10 +93,6 @@ to display `SalesOrderID`, order date, `ProductID`, product name, order quantity
 * [ ] **10.4** Use `OUTER APPLY` to calculate total quantity and total revenue for each product.
 * [ ] **10.5** Use `CROSS APPLY` to return only products that have matching sales data.
 * [ ] **10.6** Compare the behavior of `CROSS APPLY` and `OUTER APPLY` for products that have never been sold.
-* [ ] **10.7** Rewrite a correlated subquery using `OUTER APPLY`.
-* [ ] **10.8** Use `OUTER APPLY` together with an aggregated subquery.
-* [ ] **10.9** Use `OUTER APPLY` to return the TOP-selling order for every product.
-* [ ] **10.10** Compare solutions using `JOIN`, correlated subquery, and `APPLY`.
 
 ## 11. Stored Procedures
 
