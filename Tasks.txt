@@ -101,12 +101,16 @@ to display `SalesOrderID`, order date, `ProductID`, product name, order quantity
 * [ ] **11.3** Create `dbo.usp_ProductSalesSummary` with a `@ProductID` parameter.
 * [ ] **11.4** Create `dbo.usp_TopSellingProducts` with a `@TopN` parameter.
 * [ ] **11.5** Create `dbo.usp_OrdersAboveValue` with a `@MinimumValue` parameter.
-* [ ] **11.6** Create a procedure returning monthly sales results.
-* [ ] **11.7** Create a procedure using a temporary table.
-* [ ] **11.8** Create a procedure using a CTE.
-* [ ] **11.9** Create a procedure with an optional parameter.
-* [ ] **11.10** Add parameter validation to at least one procedure.
-* [ ] **11.11** Add `TRY...CATCH` error handling to at least one procedure.
+* [ ] **11.6**  Create `dbo.usp_MonthlySalesSummary` using a temporary table.
+-- The procedure should:
+-- 1. Create a temporary table called #MonthlySales
+-- 2. Store in it:
+--    - Year
+--    - Month
+--    - TotalRevenue
+--    - TotalQuantity
+-- 3. Insert monthly sales data from AdventureWorks
+-- 4. Return the results sorted by Year and Month
 
 ## 12. Window Functions
 

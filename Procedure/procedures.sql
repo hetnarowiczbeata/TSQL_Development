@@ -145,10 +145,54 @@ END
 EXEC dbo.usp_TopSellingProducts @TopN=5
 
 
-* [ ] **11.5** Create `dbo.usp_OrdersAboveValue` with a `@MinimumValue` parameter.
-* [ ] **11.6** Create a procedure returning monthly sales results.
-* [ ] **11.7** Create a procedure using a temporary table.
-* [ ] **11.8** Create a procedure using a CTE.
-* [ ] **11.9** Create a procedure with an optional parameter.
-* [ ] **11.10** Add parameter validation to at least one procedure.
-* [ ] **11.11** Add `TRY...CATCH` error handling to at least one procedure.
+--11.5** Create `dbo.usp_OrdersAboveValue` with a `@MinimumValue` parameter.
+
+CREATE OR ALTER PROCEDURE dbo.usp_OrdersAboveValue
+	@MinimumValue DECIMAL(18,2) 
+AS
+	BEGIN
+		SELECT
+	 soh.SalesOrderID,
+	 SUM(sod.LineTotal) rev
+	 FROM Sales.SalesOrderHeader soh
+     LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+	 GROUP BY soh.SalesOrderID
+	 HAVING SUM(sod.LineTotal)>@MinimumValue
+	 ORDER BY rev DESC
+END
+
+EXEC dbo.usp_OrdersAboveValue @MinimumValue=250
+
+--11.6** Create `dbo.usp_MonthlySalesSummary` using a temporary table.
+-- The procedure should:
+-- 1. Create a temporary table called #MonthlySales
+-- 2. Store in it:
+--    - Year
+--    - Month
+--    - TotalRevenue
+--    - TotalQuantity
+-- 3. Insert monthly sales data from AdventureWorks
+-- 4. Return the results sorted by Year and Month
+
+
+CREATE OR ALTER PROCEDURE dbo.usp_MonthlySalesSummary
+AS 
+BEGIN
+	DROP TABLE IF EXISTS #MonthlySales
+	SELECT 
+    MONTH(soh.OrderDate) mies,
+    YEAR(soh.OrderDate) rok,
+	SUM(sod.LineTotal) rev,
+	SUM(sod.OrderQty) Qty
+	INTO #MonthlySales
+	FROM Sales.SalesOrderHeader soh
+    LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+	GROUP BY MONTH(soh.OrderDate),YEAR(soh.OrderDate)
+
+	SELECT *
+	FROM #MonthlySales
+	ORDER BY rok,mies
+END
+
+EXEC dbo.usp_MonthlySalesSummary
+
