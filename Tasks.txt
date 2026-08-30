@@ -121,8 +121,7 @@ to display `SalesOrderID`, order date, `ProductID`, product name, order quantity
 * [ ] **12.5** Calculate each product's percentage share of total revenue.
 * [ ] **12.6** Compare current month sales with previous month sales using `LAG()`.
 * [ ] **12.7** Compare current month sales with next month sales using `LEAD()`.
-* [ ] **12.8** Calculate the difference between current and previous month revenue.
-* [ ] **12.9** Create a monthly product ranking using `PARTITION BY`.
+* [ ] **12.8** Create a monthly product ranking using `PARTITION BY`.
 
 ## 13. Advanced Analysis
 

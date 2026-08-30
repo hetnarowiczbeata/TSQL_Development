@@ -4,8 +4,9 @@
     "\\CROSS APPLY and OUTER APPLY",
     "\\Procedure",
     "\\Subqueries, EXISTS and NOT EXISTS",
-    "\\Temporary Tables"
+    "\\Temporary Tables",
+    "\\Window Functions"
   ],
-  "SelectedNode": "\\Temporary Tables\\temporary_tables.sql",
+  "SelectedNode": "\\Window Functions\\Window Functions.sql",
   "PreviewInSolutionExplorer": false
 }
