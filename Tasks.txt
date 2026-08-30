@@ -138,23 +138,5 @@ to display `SalesOrderID`, order date, `ProductID`, product name, order quantity
 * [ ] **13.11** Find products sold only once.
 * [ ] **13.12** Find products with no sales during the latest month in the dataset.
 
-## 14. Final Reporting Views
-
-* [ ] **14.1** Create one final reporting view combining the most important sales information.
-* [ ] **14.2** Create a product sales reporting view containing product name, total quantity, total revenue, number of orders, and average selling price.
-* [ ] **14.3** Create a monthly sales reporting view.
-* [ ] **14.4** Create an order summary view.
-* [ ] **14.5** Use reporting views instead of source tables in final report queries.
-
-## 15. Final Reports
-
-* [ ] **15.1** Create a TOP Products report.
-* [ ] **15.2** Create a Monthly Sales report.
-* [ ] **15.3** Create a Product Sales Summary report.
-* [ ] **15.4** Create an Orders Above Value report.
-* [ ] **15.5** Create a report showing products that have never been sold.
-* [ ] **15.6** Create a report comparing current month sales with previous month sales.
-* [ ] **15.7** Create a product ranking report.
-* [ ] **15.8** Create a monthly product ranking report.
 
 

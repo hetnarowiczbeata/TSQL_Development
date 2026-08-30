@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Advanced Analysis",
     "\\CROSS APPLY and OUTER APPLY",
     "\\Procedure",
     "\\Subqueries, EXISTS and NOT EXISTS",
     "\\Temporary Tables",
     "\\Window Functions"
   ],
-  "SelectedNode": "\\Window Functions\\Window Functions.sql",
+  "SelectedNode": "\\Temporary Tables\\temporary_tables.sql",
   "PreviewInSolutionExplorer": false
 }

@@ -17,8 +17,9 @@ GROUP BY  sod.ProductID
 
 --12.3** Assign row numbers to products using `ROW_NUMBER()`
 SELECT
-ProductID, ROW_NUMBER() OVER(order by ProductID) rn 
-FROM Sales.SalesOrderDetail
+ProductID
+,ROW_NUMBER() OVER(ORDER BY ProductID)
+FROM Production.Product
 
 --12.4** Calculate running total sales by month.
 
