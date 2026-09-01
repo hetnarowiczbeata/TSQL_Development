@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Advanced Analysis\\Advanced Analysis.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Temporary Tables\\temporary_tables.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Temporary Tables\\temporary_tables.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Tasks.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tasks.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Temporary Tables\\temporary_tables.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Temporary Tables\\temporary_tables.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Tasks.txt",
               "DocumentMoniker": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Tasks.txt",
               "RelativeDocumentMoniker": "Tasks.txt",
@@ -40,27 +40,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "temporary_tables.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (54))",
+              "DocumentIndex": 2,
+              "Title": "temporary_tables.sql",
               "DocumentMoniker": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Temporary Tables\\temporary_tables.sql",
               "RelativeDocumentMoniker": "Temporary Tables\\temporary_tables.sql",
-              "ToolTip": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Temporary Tables\\temporary_tables.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (54))",
-              "RelativeToolTip": "Temporary Tables\\temporary_tables.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (54))",
+              "ToolTip": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Temporary Tables\\temporary_tables.sql",
+              "RelativeToolTip": "Temporary Tables\\temporary_tables.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2026-08-30T19:25:27.862Z",
-              "EditorCaption": " - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (54))"
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Advanced Analysis.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (53))",
+              "Title": "Advanced Analysis.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (65))",
               "DocumentMoniker": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Advanced Analysis\\Advanced Analysis.sql",
               "RelativeDocumentMoniker": "Advanced Analysis\\Advanced Analysis.sql",
-              "ToolTip": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Advanced Analysis\\Advanced Analysis.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (53))",
-              "RelativeToolTip": "Advanced Analysis\\Advanced Analysis.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (53))",
+              "ToolTip": "C:\\Users\\hetna\\Desktop\\projekty\\SQL SERVER\\Product Sales Analysis - AdventureWorks\\Advanced Analysis\\Advanced Analysis.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (65))",
+              "RelativeToolTip": "Advanced Analysis\\Advanced Analysis.sql - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (65))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2026-08-30T19:08:47.046Z",
-              "EditorCaption": " - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (53))"
+              "EditorCaption": " - localhost.AdventureWorks (DESKTOP-36EP1HU\\hetna (65))"
             },
             {
               "$type": "Bookmark",

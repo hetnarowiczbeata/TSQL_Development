@@ -56,10 +56,79 @@ WHERE TOTAL.rev>AVG_TOTAL.REVAVG
 
 
 --13.6** Find products responsible for the highest percentage of total revenue.
+select TOP 1
+p.ProductID,
+SUM(sod.LineTotal) rev,
+SUM(SUM(sod.LineTotal)) OVER () as totslrev,
+SUM(sod.LineTotal) /SUM(SUM(sod.LineTotal)) OVER ()*100 AS PER
+FROM Sales.SalesOrderDetail sod
+LEFT JOIN Production.Product p ON sod.ProductID=p.ProductID
+GROUP BY p.ProductID 
+ORDER BY PER DESC
+
+
 --13.7** Create a monthly product ranking.
+
+SELECT
+YEAR(soh.OrderDate) rok,
+MONTH(soh.OrderDate) mies,
+SUM(sod.OrderQty) QTY,
+p.ProductID,
+DENSE_RANK() OVER(PARTITION  BY YEAR(soh.OrderDate),MONTH(soh.OrderDate) ORDER BY SUM(sod.OrderQty) DESC) RK
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+LEFT JOIN Production.Product p ON sod.ProductID=p.ProductID
+GROUP BY YEAR(soh.OrderDate),MONTH(soh.OrderDate),p.ProductID
+ORDER BY YEAR(soh.OrderDate),MONTH(soh.OrderDate)
+
+
+
 --13.8** Identify products with decreasing sales between consecutive months.
+SELECT
+YEAR(soh.OrderDate) rok,
+MONTH(soh.OrderDate) mies,
+SUM(sod.OrderQty) QTY,
+p.ProductID,
+LAG(SUM(sod.OrderQty)) OVER (PARTITION BY p.ProductID  ORDER BY YEAR(soh.OrderDate),MONTH(soh.OrderDate)),
+SUM(sod.OrderQty)-LAG(SUM(sod.OrderQty)) OVER (PARTITION BY p.ProductID  ORDER BY YEAR(soh.OrderDate),MONTH(soh.OrderDate)) diff
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+LEFT JOIN Production.Product p ON sod.ProductID=p.ProductID
+GROUP BY YEAR(soh.OrderDate),MONTH(soh.OrderDate),p.ProductID
+ORDER BY YEAR(soh.OrderDate),MONTH(soh.OrderDate)
+
+
 --13.9** Find products whose revenue increased for at least two consecutive months.
+
+WITH TOTAL AS(SELECT
+YEAR(soh.OrderDate) rok,
+MONTH(soh.OrderDate) mies,
+SUM(sod.LineTotal) AS rev,
+p.ProductID
+FROM Sales.SalesOrderHeader soh
+LEFT JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID=sod.SalesOrderID
+LEFT JOIN Production.Product p ON sod.ProductID=p.ProductID
+GROUP BY YEAR(soh.OrderDate),MONTH(soh.OrderDate),p.ProductID
+),
+LAGS AS(
+SELECT 
+*, LAG(rev,1) OVER (PARTITION BY ProductID   ORDER BY rok, mies) LG1
+,LAG(rev,2) OVER (PARTITION BY ProductID  ORDER BY rok, mies) LG2
+FROM TOTAL )
+
+SELECT * FROM LAGS
+WHERE rev>LG1
+AND LG1>LG2
+ORDER BY ProductID, rok, mies
+
 --13.10** Find products sold in every month appearing in the dataset.
+
+
+
+
+
+
+
 ---13.11** Find products sold only once.
 --13.12** Find products with no sales during the latest month in the dataset.
 SELECT 
